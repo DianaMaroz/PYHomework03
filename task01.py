@@ -1,16 +1,25 @@
-# This is a sample Python script.
+# 1.Задайте список из нескольких чисел.
+# Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
+# Пример: [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
+import random
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+my_random_list_len = int(input("Введите длину списка "))
+min_random = int(input("Введите минимальное значение списка "))
+max_random = int(input("Введите минимальное значение списка "))
 
+def create_random_int_list(lenght, min, max):
+    random_list = []
+    for i in range(lenght):
+        random_list.append(random.randint(min, max))
+    return random_list
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def count_odd_item(sm_list):
+    count = 0
+    for i in range(1, len(sm_list), 2):
+        count += sm_list[i]
+    return count
 
+my_random_list = create_random_int_list(my_random_list_len, min_random, max_random)
+print(my_random_list)
+print(f'Сумма элементов списка на нечетной позиции равна {count_odd_item(my_random_list)}')
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
