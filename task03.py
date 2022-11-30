@@ -17,7 +17,7 @@ def create_random_float_list(lenght, min, max):
 def find_fract_difference(some_list):
     for i in range(len(some_list)):
         some_list[i] = abs(some_list[i] - int(some_list[i]))
-    return max(some_list) - min(some_list)
+    return round((max(some_list) - min(some_list)), 2)
 
 my_random_float_list = create_random_float_list(my_random_list_len, min_random, max_random)
 print(my_random_float_list)
