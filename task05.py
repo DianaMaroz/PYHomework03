@@ -5,14 +5,20 @@
 
 number = int(input("Введите число: "))
 def Fibonacci(num):
-    if num in [1, 2]:
-        return 1
+    if num > 0:
+        if num in [1, 2]:
+            return 1
+        else:
+            return Fibonacci(num-1) + Fibonacci(num-2)
     else:
-        return Fibonacci(num-1) + Fibonacci(num-2)
+        if num == -1:
+            return 1
+        else:
+            return Fibonacci(num+2) - Fibonacci(num+1)
 
 fib_list = [0]
 
 for e in range (1, number + 1):
     fib_list.append(Fibonacci(e))
-    fib_list.insert(0, - Fibonacci(e))
+    fib_list.insert(0, Fibonacci(-e))
 print(fib_list)
